@@ -8,6 +8,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.beans.BeanUtils;
 
+import java.math.BigDecimal;
+
 @NoArgsConstructor
 @Setter
 @Getter
@@ -26,6 +28,9 @@ public class UserEntity {
 
     @Column(nullable = false)
     private String password;
+
+    @Column(nullable = false)
+    private BigDecimal saldo;
 
     public UserEntity(UserDto userDto){
         BeanUtils.copyProperties(userDto, this);

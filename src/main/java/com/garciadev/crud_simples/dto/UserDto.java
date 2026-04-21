@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.beans.BeanUtils;
 
+import java.math.BigDecimal;
+
 @NoArgsConstructor
 @Setter
 @Getter
@@ -15,6 +17,7 @@ public class UserDto {
     private String name;
     private String email;
     private String password;
+    private BigDecimal saldo;
 
     public UserDto(UserEntity userEntity){
         BeanUtils.copyProperties(userEntity, this);

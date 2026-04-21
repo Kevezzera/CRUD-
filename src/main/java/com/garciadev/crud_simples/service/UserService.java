@@ -21,6 +21,7 @@ public class UserService {
     public String save(UserDto userdto){
         MetodosUtils metodosUtils = new MetodosUtils();
         if (!metodosUtils.validEmail(userdto.getEmail())) return "ERRO! no campo EMAIL " + HttpStatus.BAD_REQUEST;
+        if (!metodosUtils.validaSenha(userdto.getPassword())) return "ERROR! no campo SENHA" + HttpStatus.BAD_REQUEST;
 
         UserEntity user = new UserEntity(userdto);
         userRepository.save(user);
