@@ -17,7 +17,6 @@ public class UserDto {
     private String name;
     private String email;
     private String password;
-    private BigDecimal saldo;
 
     public UserDto(UserEntity userEntity){
         BeanUtils.copyProperties(userEntity, this);
